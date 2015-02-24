@@ -35,7 +35,6 @@ _.parse = function(stream) {
 export const match = regex
 export const str = string
 export const dynamic = custom
-export const rule = lazy
 
 // Parslet-like sequence
 export function seq() {
@@ -48,4 +47,4 @@ export function seq() {
   })
 }
 
-export {any, alt}
+export {alt, any, lazy}
