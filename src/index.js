@@ -1,50 +1,41 @@
-import {custom, regex, string, any, alt, seq as sq, lazy, Parser} from 'parsimmon'
+// Core
+// ----
 
-const _ = Parser.prototype
+import Atom from './atoms/base'
 
-_.maybe = function() {
-  return this.times(0, 1).map(r => r[0])
+// Export Parser API
+export {Atom}
+export {Result, resolve, reject} from './result'
+
+// Atoms
+// -----
+
+import Custom from './atoms/custom'
+import Lazy from './atoms/lazy'
+import Alternative from './atoms/alternative'
+import Sequence from './atoms/sequence'
+import ExprAny from './atoms/expr_any'
+import ExprRe from './atoms/expr_re'
+import ExprStr from './atoms/expr_str'
+
+// Export Atom API
+export const alt = (...parsers) => new Alternative(parsers)
+export const seq = (...parsers) => new Sequence(parsers)
+export const custom = (fn) => new Custom(fn)
+export const lazy = (fn) => new Lazy(fn)
+export const any = () => new ExprAny()
+export const str = (string) => new ExprStr(string)
+export const match = (regex) => new ExprRe(regex)
+
+// Chains
+// ------
+
+import methods from './atoms/dsl'
+
+// Export Chain API
+export const _ = Atom.prototype
+
+// Install chainable methods
+for (let name in methods) {
+  _[name] = methods[name]
 }
-
-_.as = function(name) {
-  return this.map((r) => ({[name]: r}))
-}
-
-_.repeat = function(min = 0, max = Infinity) {
-  if (!Number.isInteger(max)) {
-    return this.atLeast(min)
-  }
-
-  return this.times(min, max)
-}
-
-const _parse = _.parse
-
-// Rewrite `parse` to throw on error
-_.parse = function(stream) {
-  const result = _parse.call(this, stream)
-
-  if (result.status) {
-    return result.value
-  }
-
-  throw new SyntaxError(result.expected)
-}
-
-// Parslet alias
-export const match = regex
-export const str = string
-export const dynamic = custom
-
-// Parslet-like sequence
-export function seq() {
-  return sq(...arguments).map(function(result) {
-    if (!Array.isArray(result)) {
-      return result
-    }
-
-    return Object.assign(...result)
-  })
-}
-
-export {alt, any, lazy}

@@ -1,6 +1,6 @@
 {
   "name": "parslet",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A small PEG based parser library",
   "author": "Florent Cailhol <florent.cailhol@gmail.com>",
   "license": "MIT",
@@ -14,14 +14,15 @@
   "files": [
     "lib"
   ],
-  "dependencies": {
-    "parsimmon": "^0.5.1"
-  },
   "devDependencies": {
-    "babel": "^4.4.5"
+    "babel": "^5.1.2",
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4"
   },
   "scripts": {
-    "build": "babel src -d lib",
-    "prepublish": "npm run build"
+    "clean": "rm -rf lib",
+    "build": "babel src --out-dir lib --copy-files",
+    "test": "mocha --compilers js:babel/register",
+    "prepublish": "npm run clean && npm run build"
   }
 }
