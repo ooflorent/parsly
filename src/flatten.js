@@ -11,7 +11,7 @@ const concatenate = (a, b) => a + b
 const merge = (a, b) => {
   if (a.constructor === b.constructor) {
     if (isArray(a)) return mergeArrays(a, b)
-    if (isObject(b)) return mergeObjects(a, b)
+    if (isObject(a)) return mergeObjects(a, b)
     return a + b
   }
 
