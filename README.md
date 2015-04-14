@@ -3,7 +3,8 @@
 > A small PEG based parser library.  
 > An opinionated JavaScript port of [Parslet][parslet-gh].
 
-[parslet-gh]: https://github.com/kschiess/parslet/
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
 
 ## Install
 
@@ -30,3 +31,11 @@ npm install --save parslet
 - `many()`
 - `times(n)`
 - `repeat(min, max)`
+
+[parslet-gh]: https://github.com/kschiess/parslet/
+
+[npm-url]: https://npmjs.org/package/parslet
+[npm-image]: http://img.shields.io/npm/v/parslet.svg
+
+[travis-url]: https://travis-ci.org/ooflorent/parslet-js
+[travis-image]: http://img.shields.io/travis/ooflorent/parslet-js.svg
