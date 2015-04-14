@@ -16,8 +16,8 @@ export default class Atom {
     throw new SyntaxError(result.expected)
   }
 
-  _flatten(values) {
-    return flatten(values)
+  _flatten(values, named) {
+    return flatten(values, named)
   }
 
   _resolve(index, value) {
