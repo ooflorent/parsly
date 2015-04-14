@@ -1,8 +1,9 @@
 # Changelog
 
-## To be released
+## 1.1.1
 
-* Test `flatten`
+* Fix `flatten` on named repetitions
+* Add tests to `flatten`
 
 ## 1.1.0
 
