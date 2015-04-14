@@ -1,10 +1,10 @@
 {
-  "name": "parslet",
+  "name": "parsly",
   "version": "1.0.1",
   "description": "A small PEG based parser library",
   "author": "Florent Cailhol <florent.cailhol@gmail.com>",
   "license": "MIT",
-  "repository": "ooflorent/parslet-js",
+  "repository": "ooflorent/parsly",
   "keywords": [
     "parser",
     "parslet",

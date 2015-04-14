@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+* Rename project into __Parsly__
+
 ## 1.0.1
 
 * Add Travis build

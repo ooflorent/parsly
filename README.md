@@ -1,4 +1,4 @@
-# Parslet
+# Parsly
 
 > A small PEG based parser library.  
 > An opinionated JavaScript port of [Parslet][parslet-gh].
@@ -9,7 +9,7 @@
 ## Install
 
 ```sh
-npm install --save parslet
+npm install --save parsly
 ```
 
 ## API
@@ -34,8 +34,8 @@ npm install --save parslet
 
 [parslet-gh]: https://github.com/kschiess/parslet/
 
-[npm-url]: https://npmjs.org/package/parslet
-[npm-image]: http://img.shields.io/npm/v/parslet.svg
+[npm-url]: https://npmjs.org/package/parsly
+[npm-image]: http://img.shields.io/npm/v/parsly.svg
 
-[travis-url]: https://travis-ci.org/ooflorent/parslet-js
-[travis-image]: http://img.shields.io/travis/ooflorent/parslet-js.svg
+[travis-url]: https://travis-ci.org/ooflorent/parsly
+[travis-image]: http://img.shields.io/travis/ooflorent/parsly.svg
