@@ -14,7 +14,6 @@ export default class ExprRe extends Atom {
       const fullMatch = match[0]
       const groupMatch = match[this._group]
 
-
       if (groupMatch != null) {
         return this._resolve(index + fullMatch.length, groupMatch)
       }

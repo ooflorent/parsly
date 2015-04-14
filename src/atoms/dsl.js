@@ -1,8 +1,6 @@
 import Named from './named'
 import Repetition from './repetition'
 
-const pickFirst = (arr) => arr[0]
-
 export default {
   as(name) {
     return new Named(this, name)

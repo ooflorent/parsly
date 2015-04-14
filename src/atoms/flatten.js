@@ -17,8 +17,8 @@ const merge = (a, b) => {
 
   if (isString(a)) return b
   if (isString(b)) return a
-  if (isArray(a)) return a.push(b), a
-  if (isArray(b)) return b.push(a), b
+  if (isArray(a)) return (a.push(b), a)
+  if (isArray(b)) return (b.push(a), b)
 
   throw new Error(`Unexpected case`)
 }

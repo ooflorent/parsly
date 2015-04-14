@@ -18,11 +18,10 @@ export default class Repetition extends Atom {
     const values = [this._tag]
     let result
 
-    for (let iteration = 0; iteration < this._max;) {
+    for (let iteration = 0; iteration < this._max; iteration++) {
       result = this._atom.run(stream, index).aggregate(result)
 
       if (result.status) {
-        iteration++
         values.push(result.value)
         index = result.index
         continue
