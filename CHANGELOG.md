@@ -1,5 +1,9 @@
 # Changelog
 
+## To be released
+
+* Test `flatten`
+
 ## 1.1.0
 
 * Rename project into __Parsly__

@@ -1,5 +1,4 @@
 import Atom from './base'
-import flatten from './flatten'
 
 export default class Named extends Atom {
   constructor(atom, name) {
@@ -16,7 +15,7 @@ export default class Named extends Atom {
     }
 
     const value = {
-      [this._name]: flatten(result.value, true),
+      [this._name]: this._flatten(result.value, true),
     }
 
     return this._resolve(result.index, value).aggregate(result)

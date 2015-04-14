@@ -1,5 +1,5 @@
+import flatten from '../flatten'
 import {resolve, reject} from '../result'
-import flatten from './flatten'
 
 export default class Atom {
   run(stream, index) {
@@ -10,10 +10,14 @@ export default class Atom {
     const result = this.run(String(stream), 0)
 
     if (result.status) {
-      return flatten(result.value)
+      return this._flatten(result.value)
     }
 
     throw new SyntaxError(result.expected)
+  }
+
+  _flatten(values) {
+    return flatten(values)
   }
 
   _resolve(index, value) {

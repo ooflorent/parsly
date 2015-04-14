@@ -24,6 +24,7 @@
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel src --out-dir lib --copy-files",
+    "watch": "babel src --out-dir lib --copy-files --watch",
     "lint": "eslint src/ test/",
     "test": "mocha --compilers js:babel/register",
     "prepublish": "npm run clean && npm run build",
