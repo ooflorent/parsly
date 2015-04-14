@@ -1,10 +1,15 @@
 # Parslet
 
 > A small PEG based parser library.  
-> An opinionated JavaScript port of [Parslet][parslet-gh] using [Parsimmon][parsimmon-gh].
+> An opinionated JavaScript port of [Parslet][parslet-gh].
 
 [parslet-gh]: https://github.com/kschiess/parslet/
-[parsimmon-gh]: https://github.com/jneen/parsimmon/
+
+## Install
+
+```sh
+npm install --save parslet
+```
 
 ## API
 
@@ -14,12 +19,14 @@
 - `seq(...parsers)`
 - `match(expr)`
 - `str(string)`
-- `dynamic(fn)`
 - `any()`
+- `custom(fn)`
 - `lazy(fn)`
 
 ### Chain
 
 - `as(name)`
+- `maybe()`
 - `many()`
+- `times(n)`
 - `repeat(min, max)`
