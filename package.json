@@ -26,6 +26,7 @@
     "build": "babel src --out-dir lib --copy-files",
     "lint": "eslint src/ test/",
     "test": "mocha --compilers js:babel/register",
-    "prepublish": "npm run clean && npm run build"
+    "prepublish": "npm run clean && npm run build",
+    "travis": "npm run lint && npm run test"
   }
 }
