@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+* Add missing ES6 polyfills
+
 ## 1.1.1
 
 * Fix `flatten` on named repetitions
