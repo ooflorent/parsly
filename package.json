@@ -12,7 +12,9 @@
   ],
   "main": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "parser.js",
+    "transform.js"
   ],
   "dependencies": {
     "babel-runtime": "^5.1.9"
