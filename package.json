@@ -1,6 +1,6 @@
 {
   "name": "parsly",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A small PEG based parser library",
   "author": "Florent Cailhol <florent.cailhol@gmail.com>",
   "license": "MIT",
