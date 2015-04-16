@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0
+
+* Add `Transform.Node` helper
+
 ## 2.0.1
 
 * Fix NPM package

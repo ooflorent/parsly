@@ -54,6 +54,18 @@ export default class Transform {
   }
 }
 
+export class Node {
+  constructor(data) {
+    if (isObject(data)) {
+      Object.assign(this, data)
+    }
+  }
+}
+
+// require() compatibility
+// -----------------------
+
+Transform.Node = Node
 Transform.subtree = subtree
 Transform.simple = simple
 Transform.sequence = sequence
