@@ -1,9 +1,6 @@
+import {isArray, isObject, isString} from './utils'
+
 const notEmpty = (x) => x !== '' && x != null
-
-const isArray = (x) => Array.isArray(x)
-const isObject = (x) => x.constructor === Object
-const isString = (x) => x.constructor === String
-
 const mergeArrays = (a, b) => (a.push(...b), a)
 const mergeObjects = (a, b) => Object.assign(a, b)
 const concatenate = (a, b) => a + b

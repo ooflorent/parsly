@@ -12,7 +12,21 @@
 npm install --save parsly
 ```
 
-## API
+## Usage
+
+```js
+// There is 2 ways to access Parsly APIs.
+
+// Parser API:
+import {Parser} from 'parsly'
+import {alt, seq, match, str, any, custom, lazy} from 'parsly/parser'
+
+// Transform API:
+import {Transform} from 'parsly'
+import Transform, {simple, sequence, subtree} from 'parsly/transform'
+```
+
+## Parser API
 
 ### Atoms
 
@@ -31,6 +45,12 @@ npm install --save parsly
 - `many()`
 - `times(n)`
 - `repeat(min, max)`
+
+## Transform API
+
+- `simple(node)`
+- `sequence(node)`
+- `subtree(node)`
 
 [parslet-gh]: https://github.com/kschiess/parslet/
 

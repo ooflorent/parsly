@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0
+
+* Add export namespaces
+* Add `Transform` API
+* Move parsing related APIs to `Parser`
+
 ## 1.1.2
 
 * Add missing ES6 polyfills
