@@ -28,29 +28,23 @@ export default class Transform {
     return this
   }
 
-  run(node) {
+  run(node, context) {
+    const runInContext = (node) => this.run(node, context)
+
     if (isArray(node)) {
-      node = this._recurseArray(node)
+      node = node.map(runInContext)
     } else if (isObject(node)) {
-      node = this._recurseObject(node)
+      node = mapValues(node, runInContext)
     }
 
     for (let i = 0; i < this.rules.length; i++) {
       const [match, transform] = this.rules[i]
-      if (match(node)) {
-        return transform(node)
+      if (match(node, context)) {
+        return transform(node, context)
       }
     }
 
     return node
-  }
-
-  _recurseArray(node) {
-    return node.map(this.run, this)
-  }
-
-  _recurseObject(node) {
-    return mapValues(node, this.run, this)
   }
 }
 

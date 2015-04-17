@@ -48,9 +48,21 @@ import Transform, {simple, sequence, subtree} from 'parsly/transform'
 
 ## Transform API
 
+- `Transform`
+- `Node`
 - `simple(node)`
 - `sequence(node)`
 - `subtree(node)`
+
+### Transform class
+
+- `Transform(rules)`
+- `Transform#add(rule)`
+- `Transform#run(ast, context)`
+
+### Node class
+
+- `Node(data)`
 
 [parslet-gh]: https://github.com/kschiess/parslet/
 
