@@ -1,2 +1,7 @@
-export * as Parser from './parser'
-export Transform from './transform'
+import * as Parser from './parser'
+import Transform from './transform'
+
+export {
+  Parser,
+  Transform,
+}

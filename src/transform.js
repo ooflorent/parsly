@@ -29,7 +29,7 @@ export default class Transform {
   }
 
   run(node, context) {
-    const runInContext = (node) => this.run(node, context)
+    const runInContext = (child) => this.run(child, context)
 
     if (isArray(node)) {
       node = node.map(runInContext)

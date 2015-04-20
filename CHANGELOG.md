@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.1
+
+* Fix linter errors
+
 ## 2.2.0
 
 * Add `context` parameter to `Transform#run`
