@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0
+
+* Rewrite `Transform API`
+
 ## 2.2.1
 
 * Fix linter errors

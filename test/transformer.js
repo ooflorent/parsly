@@ -1,11 +1,11 @@
 import {assert, expect} from 'chai'
-import Transform, {simple, sequence, subtree} from '../src/transform'
+import Transformer, {simple, sequence, subtree} from '../src/transformer'
 
 function A(x) { this.$A_x = x }
 function B(y) { this.$B_y = y }
 
 function testTransform(rules, cases) {
-  const transform = new Transform(rules)
+  const transform = new Transformer(rules)
   cases.forEach(([input, output]) => {
     it(`transforms ${JSON.stringify(input)} into ${JSON.stringify(output)}`, function() {
       expect(transform.run(input)).to.eql(output)
@@ -47,31 +47,34 @@ describe('Transforms', function() {
   context('given `simple(node)`', function() {
     testTransform(
       [
-        [
-          (node) => simple(node),
-          (node) => new A(node),
-        ],
-      ], [
+        {
+          match: (node) => simple(node),
+          transform: (node) => new A(node),
+        },
+      ],
+      [
         [ 'a', new A('a') ],
         [ ['a', 'b'], [new A('a'), new A('b')] ],
-      ]
+      ],
     )
   })
 
   context('given `simple(node.a)` and `simple(node.b)`', function() {
     testTransform(
       [
-        [
-          (node) => simple(node.a),
-          (node) => new A(node.a),
-        ], [
-          (node) => simple(node.b),
-          (node) => new B(node.b),
-        ],
-      ], [
+        {
+          match: (node) => simple(node.a),
+          transform: (node) => new A(node.a),
+        },
+        {
+          match: (node) => simple(node.b),
+          transform: (node) => new B(node.b),
+        },
+      ],
+      [
         [ {d: {b: 'c'}}, {d: new B('c')} ],
         [ {a: {b: 'c'}}, new A(new B('c')) ],
-      ]
+      ],
     )
   })
 })

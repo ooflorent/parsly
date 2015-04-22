@@ -1,7 +1,7 @@
 import * as Parser from './parser'
-import Transform from './transform'
+import Transformer from './transformer'
 
 export {
   Parser,
-  Transform,
+  Transformer,
 }

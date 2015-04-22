@@ -14,7 +14,7 @@
   "files": [
     "lib",
     "parser.js",
-    "transform.js"
+    "transformer.js"
   ],
   "dependencies": {
     "babel-runtime": "^5.1.11"

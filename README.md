@@ -22,8 +22,8 @@ import {Parser} from 'parsly'
 import {alt, seq, match, str, any, custom, lazy} from 'parsly/parser'
 
 // Transform API:
-import {Transform} from 'parsly'
-import Transform, {simple, sequence, subtree} from 'parsly/transform'
+import {Transformer} from 'parsly'
+import Transformer, {simple, sequence, subtree} from 'parsly/transformer'
 ```
 
 ## Parser API
@@ -57,12 +57,8 @@ import Transform, {simple, sequence, subtree} from 'parsly/transform'
 ### Transform class
 
 - `Transform(rules)`
-- `Transform#add(rule)`
+- `Transform#rule(matchFn, transformFn)`
 - `Transform#run(ast, context)`
-
-### Node class
-
-- `Node(data)`
 
 [parslet-gh]: https://github.com/kschiess/parslet/
 
